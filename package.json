@@ -1,0 +1,102 @@
+{
+  "name": "tupacan",
+  "version": "0.0.1",
+  "description": "Personal npm card for Angel (@tupacan)",
+  "main": "dist/card.js",
+  "unpkg": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tupacan/business-card.git"
+  },
+  "scripts": {
+    "prepare": "node src/htmlify",
+    "prepublishOnly": "rm -rf dist && webpack"
+  },
+  "bin": {
+    "tupacan": "bin/index.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "index.html"
+  ],
+  "keywords": [
+    "card",
+    "npm",
+    "npm card",
+    "npx",
+    "npx card",
+    "business card"
+  ],
+  "author": "Angel Tasevski",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "ansi-to-html": "^0.6.9",
+    "babel-loader": "^8.0.4",
+    "boxen": "^2.1.0",
+    "chalk": "^2.4.1",
+    "chalker": "^1.0.0",
+    "lodash.get": "^4.4.2",
+    "webpack": "^4.28.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2"
+  },
+  "myCard": {
+    "info": {
+      "name": "Angel Tasevski",
+      "handle": "tupacan",
+      "github": "tupacan",
+      "linkedin": "tupacan",
+      "instagram": "tupacan",
+      "web": "https://angeltasevski.com",
+      "work": "Frontend Developer"
+    },
+    "data": [
+      "          <white>{{name}}</><yellow> / </><cyan>{{handle}}</>",
+      "",
+      {
+        "label": "<blue>Work</>",
+        "text": "{{work}}"
+      },
+      "",
+      {
+        "label": "Twitter",
+        "text": "https://twitter.com/<cyan>{{twitter}}</>",
+        "when": "{{twitter}}"
+      },
+      {
+        "label": "npm",
+        "text": "https://www.npmjs.com/~{{npm}}",
+        "when": "{{npm}}"
+      },
+      {
+        "label": "GitHub",
+        "text": "https://github.com/{{github}}",
+        "when": "{{github}}"
+      },
+      {
+        "label": "LinkedIn",
+        "text": "https://www.linkedin.com/in/{{linkedin}}",
+        "when": "{{linkedin}}"
+      },
+      {
+        "label": "Instagram",
+        "text": "https://www.instagram.com/{{instagram}}",
+        "when": "{{instagram}}"
+      },
+      {
+        "label": "Web",
+        "text": "<cyan>{{web}}</>",
+        "when": "{{web}}"
+      },
+      "",
+      {
+        "label": "Card",
+        "text": "<yellow>npx</> {{_packageName}}"
+      }
+    ]
+  }
+}
